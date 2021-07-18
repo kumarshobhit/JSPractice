@@ -12,8 +12,9 @@ let arr=[1,
         return "rval from a fn"
     }] ;
     // get
-console.log("extract 3 from 2dArray",arr[arr.length-2][2]) ;
-console.log(arr) ;
+// console.log("null",arr[4]) ;
+// console.log("extract 3 from 2dArray",arr[arr.length-2][2]) ;
+// console.log(arr) ;
 // function defination
 // function fn() {
 //     console.log("I am function") ;
@@ -23,3 +24,18 @@ console.log(arr) ;
 // console.log("function",fn) ;
 // let rVal=fn() ;
 // console.log("rVal",rVal) ;
+function fn1(){
+    console.log("I am fn1") ;
+}
+// // // // function invocation
+// console.log("function",fn) ;
+let rVal=fn() ;
+console.log("rVal",rVal) ;
+let tempArr=[1,2,3,15,5] ;
+let temp1Arr=tempArr; 
+let arr=[
+    1,
+    true,
+    1.1,
+    
+]
