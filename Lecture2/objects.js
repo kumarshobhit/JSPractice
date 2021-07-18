@@ -31,8 +31,20 @@ cap.sayHi() ;
 // []operator
 let varName="address" ;
 console.log("address",cap[varName]) ;
+// literal
 console.log("address",cap.varName) ;
 // loop
 for(let key in cap) {
     console.log(key," : ",cap[key]) ;
+    console.log(prop," : ",cap[prop]) ;
 }
+new key add 
+console.log(cap) ;
+cap
+.movies=["first Avenger","civil War","Winter Soldier"] ;
+//update
+cap.age=45 ;
+// delete
+delete cap.address.city ;
+console.log("***********************") ;
+console.log(cap) ;
