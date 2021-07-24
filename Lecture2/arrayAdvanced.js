@@ -11,6 +11,7 @@ let arr=[1,
         console.log("Hello I am function inside an array") ;
         return "rval from a fn"
     }] ;
+    
     // get
 // console.log("null",arr[4]) ;
 // console.log("extract 3 from 2dArray",arr[arr.length-2][2]) ;

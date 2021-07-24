@@ -38,7 +38,7 @@ for(let key in cap) {
     console.log(key," : ",cap[key]) ;
     console.log(prop," : ",cap[prop]) ;
 }
-new key add 
+// new key add 
 console.log(cap) ;
 cap
 .movies=["first Avenger","civil War","Winter Soldier"] ;
