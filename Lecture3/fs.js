@@ -2,6 +2,7 @@
 // /directory
 // files -> read /write /update delete
 let fs=require("fs") ;
+let path=require("path") ;
 // let content=fs.readFileSync("f1.txt") ;
 // buffer -> video, audio, text 
 // console.log("content : ",content)
@@ -16,8 +17,9 @@ let fs=require("fs") ;
 // delete a file by passing it's path
 // fs.unlinkSync("abc.txt") ;
 // console.log("file removed") ;
-// ******************** directory *****************************
 
+
+// ******************** directory *****************************
 // create
 // fs.mkdirSync('myDir') ;
 // delete
@@ -31,6 +33,17 @@ let fs=require("fs") ;
 // console.log("isFile? ", statsOfAPath.isFile())
 // console.log("isDirectory? ",statsOfAPath.isDirectory()) ;
 // directory -> content
-let address="C:\\Users\\welcome\\Desktop\\pp12\\Lecture3"
-let content=fs.readdirSync(address)
-console.log("directory content",content)
+// let address="C:\\Users\\welcome\\Desktop\\pp12\\Lecture3"
+// let content=fs.readdirSync(address)
+// console.log("directory content",content)
+
+//copy
+// firstParam -> srcFilePath,destFilePath
+let srcFilePath="C:\\Users\\welcome\\Desktop\\pp12\\Lecture3\\dir1\\abc.txt" ;
+let destDir="C:\\Users\\welcome\\Desktop\\pp12\\Lecture5" ;
+let tobeCopiedFileName=path.basename(srcFilePath) ;
+console.log(tobeCopiedFileName) ;
+let destPath=path.join(destDir,tobeCopiedFileName) ;
+fs.copyFileSync(srcFilePath,destPath) ;
+console.log("File copied") ;
+
