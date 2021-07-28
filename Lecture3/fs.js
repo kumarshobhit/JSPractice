@@ -36,7 +36,6 @@ let path=require("path") ;
 // let address="C:\\Users\\welcome\\Desktop\\pp12\\Lecture3"
 // let content=fs.readdirSync(address)
 // console.log("directory content",content)
-
 //copy
 // firstParam -> srcFilePath,destFilePath
 let srcFilePath="C:\\Users\\welcome\\Desktop\\pp12\\Lecture3\\dir1\\abc.txt" ;
@@ -46,4 +45,3 @@ console.log(tobeCopiedFileName) ;
 let destPath=path.join(destDir,tobeCopiedFileName) ;
 fs.copyFileSync(srcFilePath,destPath) ;
 console.log("File copied") ;
-

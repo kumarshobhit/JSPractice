@@ -17,10 +17,11 @@ let path=inputArr[1] ;
     // 2. node main.js organzie path 
     // 3. node main.js help
 
+//C:\Users\welcome\Desktop\pp12\Lecture5\randomFolder
 if(command==='tree'){
     treeObj.printTree(path) ;
 }
-
+ //C:\Users\welcome\Desktop\pp12\Lecture5\randomFolder
 else if(command==="organize"){
     organizeObj.printOrg(path) ;
 }
@@ -28,5 +29,5 @@ else if(command==='help') {
     helpObj.printHelp(path) ;
 }
 else {
-    console.log("Please enter some other option") ;
+    console.log("🙏 Please enter some other option") ;
 }
