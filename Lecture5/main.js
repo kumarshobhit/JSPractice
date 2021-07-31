@@ -5,6 +5,7 @@ let organizeObj=require('./command/organize.js')
 let inputArr=process.argv.slice(2) ;
 let command=inputArr[0] ;
 let path=inputArr[1] ;
+if(path==="") path=process.cwd() ;
 // main input
 // input -> node main.js tree "path"
 // Print - > tree command executed with path ""
