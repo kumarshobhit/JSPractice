@@ -109,12 +109,3 @@ if(!isPresent2 && isPresent3){
 
 
 
-// if(inputArr[0]==='-s'){
-//     let filePath=inputArr[1] ;
-//     let ans= removeBreak(filePath) ;
-//     console.log(ans) ;
-// }
-// else {
-//     let content=readFiles(inputArr) ;
-//     console.log(content) ;
-// }
