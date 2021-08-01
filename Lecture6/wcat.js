@@ -58,33 +58,48 @@ if(isPresent){
     console.log(arr) ;
 }
 
+// cond modified- n- -b are mutually exclusive jo pehle aaye run that
+let indexOfN=optionArr.indexOf('-n') ;
+let indexOfB=optionArr.indexOf('-b') ;
+let finalOption="" ;
+
+if(indexOfN>-1 && indexOfB>-1){
+    if(indexOfN<indexOfB) finalOption='-n'
+    else finalOption='-b' ;
+}
+else {
+    if(indexOfN>-1) finalOption='-n' ;
+    else finalOption='-b' ;
+}
+
+
 // 4th task
-let arr2=[] ;
+if(finalOption==='-n'){
+    let arr2=[] ;
 for(let i=0;i<contentArr.length;i++){
     arr2.push(contentArr[i]) ;
 }
 
-let isPresent2=optionArr.includes("-n") ;
-if(isPresent2){
-   for(let i=0;i<arr2.length;i++){
+for(let i=0;i<arr2.length;i++){
        console.log(`${i+1}. ${arr2[i]}`) ;
-   }
+    }
 }
 
-// 5th task
+if(finalOption==='-b'){
+    // 5th task
 let arr3=[] ;
 for(let i=0;i<contentArr.length;i++){
     arr3.push(contentArr[i]) ;
 }
-let isPresent3=optionArr.includes("-b") ;
 let cnt=1 ;
-// if -n and -b comes together then -n should run
-if(!isPresent2 && isPresent3){
    for(let i=0;i<arr3.length;i++){
        if(arr3[i]!=='')
        console.log(`${cnt++}. ${arr3[i]}`) ;
    }
 }
+
+
+
 
 // // third task -> convert big line break into singular line break 
 // function removeBreak(filePath) {
