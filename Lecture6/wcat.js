@@ -78,15 +78,13 @@ for(let i=0;i<contentArr.length;i++){
 }
 let isPresent3=optionArr.includes("-b") ;
 let cnt=1 ;
+// if -n and -b comes together then -n should run
 if(!isPresent2 && isPresent3){
    for(let i=0;i<arr3.length;i++){
        if(arr3[i]!=='')
        console.log(`${cnt++}. ${arr3[i]}`) ;
    }
 }
-
-
-
 
 // // third task -> convert big line break into singular line break 
 // function removeBreak(filePath) {
