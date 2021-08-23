@@ -32,6 +32,11 @@ function dataExtracter(html) {
             let cols=searchTool(batsmanArr[j]).find("td") ;
             if(cols.length !== 8) continue ;
              let name=searchTool(cols[0]).text().trim() ;
+             let runs=searchTool(cols[2]).text().trim() ;
+             let balls=searchTool(cols[3]).text().trim() ;
+             let fours=searchTool(cols[5]).text().trim() ;
+             let sixes=searchTool(cols[6]).text().trim() ;
+             let sr=searchTool(cols[7]).text().trim() ;
              console.log(name) ;
         }
         console.log("***********************************")
