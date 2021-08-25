@@ -1,6 +1,8 @@
 {
   "dependencies": {
     "cheerio": "*",
-    "request": "^2.88.2"
+    "json2xls": "^0.1.2",
+    "request": "^2.88.2",
+    "xlsx": "^0.17.1"
   }
 }

@@ -1,0 +1,37 @@
+ [
+    {
+    "name":"Steve",
+    "lastName":"Rogers",
+    "friends":["Peter","Bruce","Tony"],
+    "isAvenger":false,
+    "age":34,
+    "address":{
+        "state":"New York",
+        "city":"NY City"
+    }
+    },
+    {
+    "name":"Natasha",
+    "lastName":"Rogers",
+    "friends":["Peter","Bruce","Tony"],
+    "isAvenger":false,
+    "age":34,
+    "address":{
+        "state":"New York",
+        "city":"NY City"
+    }
+    },
+    {
+    "name":"Hulk",
+    "lastName":"Rogers",
+    "friends":["Peter","Bruce","Tony"],
+    "isAvenger":false,
+    "age":34,
+    "address":{
+        "state":"New York",
+        "city":"NY City"
+    }
+    }
+] 
+    
+

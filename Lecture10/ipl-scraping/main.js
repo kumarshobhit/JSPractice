@@ -2,7 +2,12 @@ let request=require("request")
 let cheerio=require("cheerio")
 let fs=require("fs")
 let scoreCardObj=require("./scoreCard2")
+const path=require('path')
 let url="https://www.espncricinfo.com/series/ipl-2020-21-1210595"
+// home page
+const iplPath=path.join(__dirname,'ipl')
+dirCreater(iplPath)
+
 request(url,cb) ;
 function cb(err, response,html) {
     if(err) {
@@ -46,4 +51,10 @@ function allMatch(html) {
     console.log(fullLink) ;
     scoreCardObj.psm(fullLink) ;
 }
+}
+
+function dirCreater(filePath) {
+    if(fs.existsSync(filePath)==false) {
+        fs.mkdirSync(filePath)
+    }
 }
