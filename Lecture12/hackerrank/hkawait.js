@@ -37,14 +37,31 @@ let page,browser;
         await waitAndClick('input[value="warmup"]',page) ;
         await page.waitFor(3000);
         console.log(" warm up algorithms page opened") ;
-        let questionsArr=await page.$$('.ui-btn.ui-btn-normal.primary-cta.ui-btn-line-primary.ui-btn-styled',{delay:100}) ;
+        // let questionsArr=await page.$$('.ui-btn.ui-btn-normal.primary-cta.ui-btn-line-primary.ui-btn-styled',{delay:100}) ;
+        let questionsArr=await page.$$('.js-track-click.challenge-list-item',{delay:100}) ;
         console.log("all challenges opened");
+        await page.waitFor(3000);
         // n number of questions first
+        let questionLinks=[] ;
         for (let i = 0; i < questionsArr.length; i++) {
-            await questionSolver(page, questionsArr[i],codesObj.answers[i]);
+            let linkPromise = await page.evaluate(function (elem) {
+            return elem.getAttribute("href");
+            }, questionsArr[i]);
+            questionLinks.push(linkPromise);
         }
-        console.log("all challenges solved");
-        
+        console.log("links fetched") ;
+        let completeLinks=[] ;
+        for (let i = 0; i < questionLinks.length; i++) {
+            let completeLink = `https://www.hackerrank.com${questionLinks[i]}`;
+            completeLinks.push(completeLink);
+        }
+
+        console.log("links completed") ;
+
+        for(let i=0;i<completeLinks.length ; i++){
+            await questionSolver(page,completeLinks[i],codesObj.answers[i]);
+        }
+         console.log("all challenges solved") ;
     }
     catch (err) {
         console.log(err);
@@ -84,13 +101,13 @@ function handleIfNotPresent(selector,cPage) {
     })
 }
 // return promise that will submit a given qeustion
-function questionSolver(page,question,answer) {
+function questionSolver(page,questionLink,answer) {
     return new Promise(function (resolve, reject) {
-        let qWillBeClickedPromise=question.click() ;
+        let navigatedToQues=page;
+         navigatedToQues.goto(questionLink)
         // code read 
         // hk editor -> ctlr A + ctlr X
         // code type
-        qWillBeClickedPromise
         // click
         // code type 
         // ctrl A + ctrl X
