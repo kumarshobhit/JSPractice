@@ -17,65 +17,42 @@ let browserStartPromise=puppeteer.launch({
 
 });
 let page,browser;
-browserStartPromise
-.then(function (browserObj) {
-    console.log("Browser Opened");
-    // new tab
-    browser=browserObj;
-    let browserTabOpenPromise=browserObj.newPage();
-    return browserTabOpenPromise ;
-    }).then(function (newTab) {
-        page=newTab;
-         console.log("new tab opened");
-         let gPageOpenPromise=page.goto(loginLink);
-         return  gPageOpenPromise ;
-    })
-    .then(function() {
-        console.log("enter your username") ;
-          let userPromise =  page.type("input[name='username']",emailpassObj.email,{delay:50});
-        return userPromise ;
-    })
-    .then(function() {
-        console.log("enter your password") ;
-          let passwordPromise =  page.type("input[type='password']",emailpassObj.password,{delay:50});
-        return passwordPromise ;
-    })
-    .then(function() {
-        console.log("time to click the button !");
-         let elementClickPromise = page.click('button[data-analytics="LoginPassword"]',{delay:100});
-        return elementClickPromise;
-    })
-    .then(function() {
-        console.log("landing page");
-         let elementClickPromise = waitAndClick('.topic-card a[data-attr1="algorithms"]',page);
-        return elementClickPromise;
-    })
-    .then(function() {
+(async function fn() {
+    try {
+        let browserObj= await browserStartPromise;
+        console.log("Browser Opened");
+        // new tab
+        browser=browserObj;
+        page = await browserObj.newPage();
+        console.log("new tab opened");
+         await page.goto(loginLink);
+        await page.type("input[name='username']",emailpassObj.email,{delay:50});
+        console.log("username entered") ;
+        await page.type("input[type='password']",emailpassObj.password,{delay:50});
+        console.log("password entered") ;
+        await  page.click('button[data-analytics="LoginPassword"]',{delay:100});
+        console.log('log in done')
+        await waitAndClick('.topic-card a[data-attr1="algorithms"]',page);
         console.log("algorithms page opened") ;
-        let getToWarmUp=waitAndClick('input[value="warmup"]',page) ;
-        return getToWarmUp ;
-    })
-    .then(function() {
+        await waitAndClick('input[value="warmup"]',page) ;
+        await page.waitFor(3000);
         console.log(" warm up algorithms page opened") ;
-        let waitFor3SecondsPromise=page.waitFor(3000);
-        return waitFor3SecondsPromise ;
-    })
-    .then(function() {
+        let questionsArr=await page.$$('.ui-btn.ui-btn-normal.primary-cta.ui-btn-line-primary.ui-btn-styled',{delay:100}) ;
         console.log("all challenges opened");
-        let allChallengeArrPromise=page.$$('.ui-btn.ui-btn-normal.primary-cta.ui-btn-line-primary.ui-btn-styled',{delay:100}) ;
-        return allChallengeArrPromise ;
-    })
-    .then(function(questionsArray){
         // n number of questions first
-        console.log("number of questions",questionsArray.length) ;
-        let qWillBeSolvedPromise=questionSolver(page,questionsArray[0],codesObj.answers[0]) ;
-        return qWillBeSolvedPromise ;
-    })
-    .then(function(){
-        console.log("Question is solved") ;
-    })
+        for (let i = 0; i < questionsArr.length; i++) {
+            await questionSolver(page, questionsArr[i],codesObj.answers[i]);
+        }
+        console.log("all challenges solved");
+        
+    }
+    catch (err) {
+        console.log(err);
+    }
+})(); 
 
-    // user defined promise based function -> it will return 
+
+   // user defined promise based function -> it will return 
     // a promise that will be
     //  resolved when the user has waited for the element to appear as well as clicked
     function waitAndClick(selector,cpage) {
@@ -181,3 +158,84 @@ function questionSolver(page,question,answer) {
         })
     })
 }
+
+
+//     // user defined promise based function -> it will return 
+//     // a promise that will be
+//     //  resolved when the user has waited for the element to appear as well as clicked
+//     function waitAndClick(selector,cpage) {
+//         return new Promise( async function (resolve, reject) {
+//             try {
+//                   await cpage.waitForSelector(selector,{visible:true});
+//                   let clickPromise= await page.click(selector,{delay:100});
+//                   return clickPromise;
+//             }
+//             catch(err) {
+//                 console.log(err) ;
+//             }
+//     }
+//     .then(function(){
+//         resolve() ;
+//     })
+//     .catch(function(err){
+//         reject(err);
+//     })
+//     )
+// }
+
+
+
+       
+// // promise -> banner is not present or not -> the code will run
+// function handleIfNotPresent(selector,cPage) {
+//     return new Promise( async function(resolve,reject){
+//         try {
+//             // wait clickModal
+//         let waitAndClickPromise=waitAndClick(selector,cpage);
+//         waitAndClickPromise
+//         }
+//         catch (err) {
+//             console.log(err) ;
+//         }
+//     }
+//         .then(function(){
+//             resolve() ;
+//         })
+//         .catch(function(err){
+//             reject(err);
+//         })
+//     )
+// }
+// // return promise that will submit a given qeustion
+// function questionSolver(page,question,answer) {
+//     return new Promise( async function (resolve, reject) {
+//         try {
+//         await question.click() ;
+//         await  waitAndClick(".monaco-editor.no-user-select.vs",page);
+//         await waitAndClick('input[type="checkbox"]',page) ;
+//         await page.waitForSelector(".text-area.custominput",{visible:true})
+//         await  page.type('.text-area.custominput',answer,{delay:10}) ;
+//         await page.keyboard.down('Control');
+//          await page.keyboard.press('A',{delay:100});
+//         await page.keyboard.press('X',{delay:100});
+//         await page.keyboard.up('Control');
+//         await waitAndClick(".monaco-editor.no-user-select.vs",page);
+//         await page.keyboard.down('Control');
+//         await page.keyboard.press('A',{delay:100});
+//         await page.keyboard.press('V',{delay:100});
+//         await page.keyboard.up('Control');
+//         await page.click('.hr-monaco__run-code',{delay:50}) ;
+
+//         }
+//         catch(err){
+//             console.log(err) ;
+//         }
+//     }
+//         .then(function(){
+//             resolve() ;
+//         }).catch(function(err){
+//             console.log(err) ;
+//             reject() ;
+//         })
+//     )
+// }
