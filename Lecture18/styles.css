@@ -34,11 +34,11 @@ body {
 .add-cross_container>*{
     width:50% ;
     height:100% ;
-    background-color:red ;
+    /* background-color:red ; */
 }
 
 .plus-container {
-    background-color:yellow ;
+    /* background-color:yellow ; */
 }
 
 .multiply-container {
@@ -77,7 +77,7 @@ background-color: lightgreen ;
 }
 
 .black {
-background-color: lightcoral;
+background-color: black;
 }
 
 .main-container {
@@ -102,7 +102,6 @@ padding: 4px;
 
 .task_header {
     height:0.5rem ;
-    background-color:black ;
 }
 
 .task_main-container {
@@ -114,3 +113,6 @@ padding: 4px;
     margin: 0.2rem;
     margin-left:0px ;
 }
+
+
+/* jo class niche ho jayege usko prefernce milte hain in case of a conflict */
