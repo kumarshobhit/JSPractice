@@ -83,11 +83,34 @@ background-color: lightcoral;
 .main-container {
 height: calc(100vh - 5.2rem) ;
 background-color: #f2f2f2;
+padding: 4px;
 }
+
+/* input styling */
+/* uuid frontend */
 
 .task_input {
     color: white;
 }
 
-/* input styling */
-/* uuid frontend */
+.task_container {
+    border:4px solid black ;
+    background-color:white ;
+    height:8rem ;
+    width: 13rem;
+}
+
+.task_header {
+    height:0.5rem ;
+    background-color:black ;
+}
+
+.task_main-container {
+    padding:0.5rem ;
+}
+
+.task_id {
+    color:rgb(150,144,144) ;
+    margin: 0.2rem;
+    margin-left:0px ;
+}
