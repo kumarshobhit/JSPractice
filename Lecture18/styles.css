@@ -1,0 +1,93 @@
+body {
+    margin: 0px;
+}
+
+.header-container {
+    height:5.2rem ;
+    background-color:#333 ;
+    display: flex ;
+    align-items: center ;
+    padding-left: 3rem;
+}
+
+/* common styling */
+.header-container>* {
+    background-color:rgb(96,88,88) ;
+    height:65% ;
+    border-radius:6px ;
+}
+
+.color-group_container {
+    width: 40%;
+    margin-right: 3rem;
+    background-color:rgb(96,88,88) ;
+    display: flex;
+    align-items: center ;
+    justify-content: space-evenly;
+}
+
+.add-cross_container{
+    width:20% ;
+    display: flex ;
+}
+
+.add-cross_container>*{
+    width:50% ;
+    height:100% ;
+    background-color:red ;
+}
+
+.plus-container {
+    background-color:yellow ;
+}
+
+.multiply-container {
+
+}
+
+.plus-container,.multiply-container {
+    /* center the content inside a div */
+    display:flex ;
+    justify-content: center;
+    align-items: center;
+}
+
+/* icons are treated as text */
+.fa-plus,.fa-times{
+    font-size: 2rem;
+    font-weight: 400 ;
+}
+
+.color {
+    height:50% ;
+    width : 12% ;
+    border-radius:4px ;
+}
+
+.pink {
+background-color: lightpink ;
+}
+
+.blue {
+background-color: lightblue ;
+}
+
+.green {
+background-color: lightgreen ;
+}
+
+.black {
+background-color: lightcoral;
+}
+
+.main-container {
+height: calc(100vh - 5.2rem) ;
+background-color: #f2f2f2;
+}
+
+.task_input {
+    color: white;
+}
+
+/* input styling */
+/* uuid frontend */
