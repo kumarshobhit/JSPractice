@@ -26,6 +26,7 @@ function createTask(id,input) {
 
     // add event listener for color change 
     let header=document.querySelector('.task_header') ;
+
     header.addEventListener('click',function(e) {
         let cColor=header.classList[1] ;
     let idx=colors.indexOf(cColor) ;
@@ -33,8 +34,36 @@ function createTask(id,input) {
     let nextColor=colors[nextIdx] ;
     header.classList.remove(cColor) ;
     header.classList.add(nextColor) ;
+    console.log('hello')
     })
     
 }
 
 // filter the tasks
+// for(let i=0 ; i<colors.length ; i++) {
+//     let element=document.querySelector(`.${colors[i]}`) ;
+//     element.addEventListener('click',function(e){
+//         filterTasks(colors[i]) ;
+//     }) 
+// }
+
+// function filterTasks(color) {
+//     let children=document.querySelectorAll('.task_container') ;
+//     for(let i=0; i<children.length;i++) {
+//        let taskHeader=children[i].querySelector('.task_header') ;
+//        let Ccolor=taskHeader.classList[1] ;
+//        if(Ccolor==color) {
+//         children[i].style.display='block' ;
+//        }
+//        else {
+//          children[i].style.opacity='none' ;
+//        }
+//     }
+// }
+
+// event bubbling
+
+//  let element=children[i] ;
+//         let eleChildren=element.childNodes ;
+//         let newEle=eleChildren[1] ;
+//         let newClass=newEle.classList[1] ;
