@@ -56,6 +56,24 @@
         .three {
             background-color: lightblue
         }
+
+        .four {
+            background-color: lightgray;
+        }
+
+        .parent-absolute {
+            position: relative;
+        }
+
+        .parent-absolute>.two {
+            background-color: #ffb6c1;
+            position: absolute;
+            /* next element-> no respect for original place */
+            /* page top left portion */
+            /* top left measure parent -> position absolute */
+            top: 10px;
+            left: 20px;
+        }
     </style>
 </head>
 
@@ -72,9 +90,14 @@
         <div class="child two">2</div>
         <div class="child three">3</div>
     </div>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis optio quisquam suscipit dignissimos
+    <!-- <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis optio quisquam suscipit dignissimos
         doloremque a, nam atque, dolorum aperiam odio deserunt iure explicabo illo voluptates? Cum quasi earum doloribus
-        amet.</p>
+        amet.</p> -->
+    <div class="parent-absolute">
+        <div class="child one">1</div>
+        <div class="child two">2</div>
+        <div class="child three">3</div>
+    </div>
 </body>
 
 </html>
