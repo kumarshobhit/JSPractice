@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Positioning</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            font-family: sans-serif;
+            color: #fff;
+        }
+
+        body {
+            background-color: rgb(172, 29, 172);
+        }
+
+        .parent {
+            height: 30rem;
+            width: 20rem;
+            border: 2px solid white;
+            margin-left: 1rem;
+        }
+
+        h1 {
+            margin-bottom: 3rem;
+        }
+
+        .child {
+            color: black;
+            height: 10rem;
+            width: 10rem;
+            font-weight: bolder;
+            font-size: 3rem;
+        }
+
+        .one {
+            background-color: lightgreen;
+        }
+
+        .two {
+            background-color: rgb(255, 182, 193);
+            /* relative to it's original pos*/
+            position: relative;
+            /* vertically move */
+            top: -100px;
+            /* horizontal */
+            left: 200px;
+        }
+
+        .three {
+            background-color: lightblue
+        }
+    </style>
+</head>
+
+<body>
+    <!-- position static -->
+    <!-- normal flow  
+    order wise 
+    ui element order html 
+    it will print the same order 
+     -->
+    <h1>Positioning</h1>
+    <div class="parent">
+        <div class="child one">1</div>
+        <div class="child two">2</div>
+        <div class="child three">3</div>
+    </div>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis optio quisquam suscipit dignissimos
+        doloremque a, nam atque, dolorum aperiam odio deserunt iure explicabo illo voluptates? Cum quasi earum doloribus
+        amet.</p>
+</body>
+
+</html>
