@@ -25,3 +25,10 @@ body {
     background-color:lightgoldenrodyellow;
     height: 2.5rem;
 }
+
+.top_row .cell {
+    text-align: center ;
+    border:2px solid grey ;
+    height:2rem ;
+    width: 5rem;
+}
