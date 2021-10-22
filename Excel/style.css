@@ -19,16 +19,57 @@ body {
 .grid_container {
     background-color:lightgreen;
     height:calc(100vh - ( 5rem + 2rem + 2.5rem) ) ; 
+    overflow:auto;
 }
 
 .sheets_container {
     background-color:lightgoldenrodyellow;
     height: 2.5rem;
 }
-
+.top_row {
+    display:flex ;
+    position:relative;
+    top: -2rem ;
+    left: 2.1rem ;
+}
 .top_row .cell {
     text-align: center ;
     border:2px solid grey ;
-    height:2rem ;
-    width: 5rem;
+    min-width: 5rem;
+}
+
+.left_col {
+    width:2rem ;
+    text-align: center ;
+    position:relative ;
+    top:-1.6rem ;
+}
+
+.cell {
+     text-align: center ;
+    border:0.5px solid grey ;
+}
+
+.top_left_cell {
+    height: 2rem ;
+    width: 2rem ;
+    background-color:grey ;
+}
+
+.row{
+    display:flex ;
+}
+
+.grid .cell {
+    min-width: 5rem ;
+}
+
+.grid_container {
+position:relative ;
+}
+
+.grid {
+position: absolute ; 
+top:2rem ;
+left:2.1rem ;
 }
