@@ -1,0 +1,27 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+}
+
+.menu_bar {
+    background-color: lightblue;
+    height:5rem ;
+}
+
+.formula_bar {
+    background-color:lightpink;
+    height: 2rem ;
+}
+
+.grid_container {
+    background-color:lightgreen;
+    height:calc(100vh - ( 5rem + 2rem + 2.5rem) ) ; 
+}
+
+.sheets_container {
+    background-color:lightgoldenrodyellow;
+    height: 2.5rem;
+}
