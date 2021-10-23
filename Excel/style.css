@@ -36,13 +36,14 @@ body {
     text-align: center ;
     border:2px solid grey ;
     min-width: 5rem;
+    height: 2rem ;
 }
 
 .left_col {
     width:2rem ;
     text-align: center ;
     position:relative ;
-    top:-1.6rem ;
+    top:-2.0rem ;
 }
 
 .cell {
@@ -62,6 +63,7 @@ body {
 
 .grid .cell {
     min-width: 5rem ;
+    outline:none; 
 }
 
 .grid_container {
@@ -91,6 +93,7 @@ justify-content: center;
 
 .address_input {
     width:4rem ;
+    /* text-align: center; */
 }
 
 .formula_input {
