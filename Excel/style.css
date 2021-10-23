@@ -12,7 +12,7 @@ body {
 }
 
 .formula_bar {
-    background-color:lightpink;
+    /* background-color:lightpink; */
     height: 2rem ;
 }
 
@@ -73,3 +73,28 @@ position: absolute ;
 top:2rem ;
 left:2.1rem ;
 }
+
+.formula_bar {
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.formula_bar>div {
+    margin-left:1rem ;
+    margin-right: 1rem;
+}
+
+.formula_bar>* {
+    height: 70%;
+}
+
+.address_input {
+    width:4rem ;
+}
+
+.formula_input {
+    width: calc( 100vw - 8rem ) ;
+}
+
+

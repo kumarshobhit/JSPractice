@@ -29,7 +29,11 @@ for(let i=0;i<100;i++) {
     for(let j=0;j<26;j++) {
         let div=document.createElement('div');
         div.setAttribute("class","cell") ;
-        div.textContent=i+","+j ;
+        // div.textContent=i+","+j ;
+        div.setAttribute("contentEditable",true) ;
+        // every cell identification required for
+        div.setAttribute('rid',i) ;
+        div.setAttribute('cid',j) ;
         row.appendChild(div) ;
     }
     grid.appendChild(row) ;
