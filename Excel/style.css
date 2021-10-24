@@ -1,9 +1,11 @@
 * {
     box-sizing: border-box;
+    font-weight: 100;
 }
 
 body {
     margin: 0px;
+    font-family: sans-serif;
 }
 
 
@@ -35,46 +37,61 @@ body {
     /* background-color:lightpink; */
     height: 2rem ;
 }
-.grid_container {
-    background-color:lightgreen;
-    height:calc(100vh - ( 5rem + 2rem + 2.5rem) ) ; 
-    overflow:auto;
-}
 
- /* grid styling  */
 .sheets_container {
     background-color:lightgoldenrodyellow;
     height: 2.5rem;
 }
+ /* grid styling  */
+ .grid_container {
+    /* background-color:lightgreen; */
+    height:calc(100vh - ( 5rem + 2rem + 2.5rem) ) ; 
+    overflow:scroll;
+}
+.cell {
+     text-align: center ;
+    border:0.1px solid grey ;
+    height:1.4rem ;
+    outline:none ;
+    border-right:none ;
+    border-top:none ;
+}
+
+
 .top_row {
     display:flex ;
     position:relative;
-    top: -2rem ;
-    left: 2.1rem ;
+    top: -1.4rem ;
+    left: 2rem ;
 }
 .top_row .cell {
     text-align: center ;
-    border:2px solid grey ;
+    /* these cells are flexed */
+    border:0.1px solid grey ;
     min-width: 5rem;
-    height: 2rem ;
+    padding-top: 0.21rem;
+    font-size:0.7rem ;
 }
 
 .left_col {
     width:2rem ;
     text-align: center ;
     position:relative ;
-    top:-2.0rem ;
+    top:-1.45rem ;
+     background-color: #f1f2f6
 }
 
-.cell {
-     text-align: center ;
-    border:0.5px solid grey ;
+.left_col > .cell {
+    padding-top: 0.21rem;
+    font-size:0.7rem ;
 }
+
 
 .top_left_cell {
-    height: 2rem ;
+    height: 1.4rem ;
     width: 2rem ;
-    background-color:grey ;
+    border-right: 5px solid lightgray ;
+    border-bottom: 5px solid lightgray;
 }
 
 .row{
@@ -83,7 +100,9 @@ body {
 
 .grid .cell {
     min-width: 5rem ;
-    outline:none; 
+    border: 0.02px solid rgb(160,158,158) ;
+    border-top:none ;
+    border-right:none;
 }
 
 .grid_container {
@@ -92,8 +111,8 @@ position:relative ;
 
 .grid {
 position: absolute ; 
-top:2rem ;
-left:2.1rem ;
+top:1.35rem ;
+left:2rem ;
 }
 
 .formula_bar {

@@ -52,6 +52,8 @@ for(let i=0;i<allGridCells.length;i++) {
         let prevObj=getRidCidFromAddress(prevAddress) ;
         let prevCell=document.querySelector(`.grid .cell[rId='${prevObj.rid}'][cId='${prevObj.cid}']`) ;
         prevCell.style.border="0.5px solid grey" ;
+        prevCell.style.borderRight="none";
+        prevCell.style.borderTop="none";
     }
     let rid=allGridCells[i].getAttribute("rId");
     let cid=allGridCells[i].getAttribute("cId");
